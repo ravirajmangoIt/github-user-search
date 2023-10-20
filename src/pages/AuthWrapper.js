@@ -6,9 +6,11 @@ function AuthWrapper({ children }) {
   const { isLoading, error } = useAuth0();
 
   if (isLoading) {
+    return(
     <Wrapper>
       <img src={loadingGif} alt="spinner" />
-    </Wrapper>;
+    </Wrapper>
+    );
   }
 
   if (error) {
@@ -31,3 +33,4 @@ const Wrapper = styled.section`
 `;
 
 export default AuthWrapper;
+
